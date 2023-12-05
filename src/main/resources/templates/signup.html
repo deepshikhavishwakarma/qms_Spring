@@ -1,0 +1,33 @@
+<!-- signup.html -->
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Signup</title>
+</head>
+
+<body>
+    <form th:action="@{/signup}" th:object="${user}" method="post">
+        <label for="employeeId">Employee ID:</label>
+        <input type="number" id="employeeId" name="employeeId" th:field="*{employeeId}" required />
+
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" th:field="*{name}" required />
+
+        <label for="functionalArea">Functional Area:</label>
+        <select id="functionalArea" name="functionalArea" th:field="*{functionalArea}" required>
+            <option>IT/Engineering</option>
+            <option>Finance</option>
+            <option>HR</option>
+            <option>Quality Management</option>
+            <option>None</option>
+        </select>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" th:field="*{password}" required />
+
+        <button type="submit">Signup</button>
+    </form>
+</body>
+
+</html>
